@@ -1,0 +1,31 @@
+1. There's a commit with the message "Convert social links from text to images". How many files were changed by this commit?
+
+Command: git log --stat --grep="Convert social links from text to images"
+
+Explanation:
+--stat: Shows a summary of the changes for each commit, including:
+  - The number of files changed.
+  - The lines added and removed in each file.
+--grep="message": Filters the log to show only commits with the specified message or text.
+
+OR
+First used the command below to find the SHA of the commit:
+Command: git log --oneline 
+
+Then used the command below to find the right info: 
+Command: git log --stat <with the SHA>
+
+2. How many rulesets are added to the CSS by commit 8d3ea36? 
+
+Command: git log -p -1 8d3ea36
+
+3. Look at commit fdf5493. What's the first HTML heading element that's added by this commit?
+
+Command: git show fdf5493
+OR
+Command: git show fdf5493 -- *.html
+
+Explanation:
+git show fdf5493: Displays all the changes made by the specific commit fdf5493, including added and removed lines.
+-- *.html: Filters the output to only show changes in HTML files.
+Look for lines starting with +<h1> or other heading tags (<h2>, <h3>, etc.), which indicate added lines in the commit.
